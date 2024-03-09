@@ -3,9 +3,6 @@ const express = require('express')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
-// console.log(__dirname) // showing current directory path
-// console.log(__filename) // showing current file path (app.js)
-//console.log(path.join(__dirname, '../public'))
 const app = express()
 
 // Define path for express config
