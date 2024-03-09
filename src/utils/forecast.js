@@ -11,10 +11,10 @@ const forecast = (lat, long, callback) => {
         } else if (body.error) {
             callback('Please check Lat & Long query', undefined)
         } else {
-            console.log('Forcast API Called', body.current.temperature, body.current.feelslike)
+            // console.log('Forcast API Called', body.current)
             const currentTemp = body.current.temperature
             const feelsLikeTemp = body.current.feelslike
-            callback(undefined, body.current.weather_descriptions[0] +'. it is currently '+ currentTemp + ' degrees out. It feels like ' + feelsLikeTemp + ' degrees out')
+            callback(undefined, body.current.weather_descriptions[0] +'. it is currently '+ currentTemp + ' degrees out. It feels like ' + feelsLikeTemp + ' degrees out.' + '\nCurrent Humidity is: '+ body.current.humidity)
             //callback(currentTemp, feelsLikeTemp, body.current.weather_descriptions[0])
         }
     })
